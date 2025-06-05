@@ -1,11 +1,14 @@
 import React from 'react'
 import react from '../assets/react.svg'
-import {NavLink} from 'react-router-dom'
+import {NavLink,useNavigate} from 'react-router-dom'
 
 /*Link or NavLink it will be converted to anchor tag <a>*/
 /* Using NavLink instead of Link allows us to apply styles to the active link */ 
 
 const Navbar = () => {
+
+    const navigate=useNavigate()
+
   return (
     <div className='navbar'>
       <img src={react} alt=''/>
@@ -15,9 +18,11 @@ const Navbar = () => {
         <NavLink to='/about'><li>About</li></NavLink>
         <NavLink to='/contact'><li>Contact</li></NavLink>
       </ul>
-      <button>Get Started</button>
+      <button onClick={()=>navigate('/about',{replace:true})}>Get Started</button>
     </div>
   )
 }
+/*useNavigate stores navigation history in history stack*/
+/*To navigate to new location , replace the current location or navigate to forward or backward n history stack*/
 
 export default Navbar
