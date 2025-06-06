@@ -4,7 +4,7 @@ import { Link,useLoaderData} from 'react-router-dom'
 const Job = () => {
     const jobData=useLoaderData();
   return (
-    <div>
+    <div className='job'>
       {jobData.map((jo)=>{
         return <Link>
             <h4>{jo.title}</h4>

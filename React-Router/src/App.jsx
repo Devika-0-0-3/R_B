@@ -23,8 +23,9 @@ const App = () => {
             <Route path='info' element={<ContactInfo/>}/>
             <Route path='form' element={<ContactForm/>}/>
           </Route>
-          <Route path='job' element={<JobLayout/>}></Route>
+          <Route path='job' element={<JobLayout/>}>
             <Route index element={<Job/>} loader={jobLoader}></Route>
+          </Route>
           <Route path='*' element={<NotFound/>}/>
       </Route>
     )
